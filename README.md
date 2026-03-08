@@ -1,127 +1,67 @@
-# DataProject – SQL Logic Queries (Sakila Database)
+# DataProject – Consultas SQL con la base de datos Sakila
 
-## Descripción del proyecto
+## Descripción
 
-Este proyecto consiste en la resolución de una serie de **consultas SQL** utilizando la base de datos **Sakila**, una base de datos de ejemplo utilizada comúnmente para practicar consultas relacionales.
+En este proyecto se han realizado diferentes consultas SQL utilizando la base de datos **Sakila**, que simula el funcionamiento de un videoclub (películas, clientes, alquileres, actores, categorías, etc.).
 
-El objetivo del proyecto es aplicar diferentes conceptos de SQL, incluyendo:
+El objetivo del trabajo es practicar la lógica de consultas en SQL y familiarizarse con el manejo de bases de datos relacionales.
 
-* Consultas básicas (`SELECT`, `WHERE`, `ORDER BY`)
-* Funciones agregadas (`COUNT`, `AVG`, `SUM`, `MIN`, `MAX`)
-* Agrupaciones (`GROUP BY`, `HAVING`)
+A lo largo del proyecto se resuelven **64 ejercicios** en los que se utilizan distintas funcionalidades del lenguaje SQL.
+
+---
+
+## Contenido
+
+Las consultas incluyen distintos tipos de operaciones, por ejemplo:
+
+* Selección y filtrado de datos (`SELECT`, `WHERE`)
+* Ordenación de resultados (`ORDER BY`)
+* Funciones de agregación (`COUNT`, `AVG`, `SUM`, `MIN`, `MAX`)
+* Agrupaciones con `GROUP BY` y `HAVING`
+* Uso de distintos tipos de `JOIN`
 * Subconsultas
-* Diferentes tipos de `JOIN`
 * Creación de **vistas**
 * Creación de **tablas temporales**
-* Uso de **CROSS JOIN**
 
-El proyecto contiene un total de **64 consultas SQL**, organizadas en diferentes bloques según su nivel de complejidad.
+Todo esto permite obtener información de la base de datos como:
+
+* número de alquileres
+* películas más alquiladas
+* actores y películas en las que participan
+* clientes y su actividad de alquiler
 
 ---
 
 ## Estructura del proyecto
 
-```
-.
-├── BBDD_Proyecto_shakila.sql
-├── consultas_sql.sql
-└── README.md
-```
+El repositorio incluye principalmente:
 
-**Archivos:**
-
-* `BBDD_Proyecto_shakila.sql`
-  Script para crear y cargar la base de datos Sakila.
-
-* `consultas_sql.sql`
-  Archivo con todas las consultas SQL realizadas para resolver el proyecto.
-
-* `README.md`
-  Documento explicativo del proyecto.
+* **Script de la base de datos Sakila**
+* **Archivo con todas las consultas SQL del ejercicio**
+* **Este README explicativo**
 
 ---
 
-## Tecnologías utilizadas
+## Base de datos utilizada
 
-* **PostgreSQL**
-* **SQL**
-* Base de datos **Sakila**
+Se ha utilizado la base de datos **Sakila**, que es un dataset de ejemplo muy utilizado para practicar SQL.
+Esta base de datos contiene información sobre:
 
----
-
-## Contenido de las consultas
-
-Las consultas cubren diferentes aspectos del lenguaje SQL:
-
-### Consultas básicas
-
-* Selección de registros
-* Filtrado con `WHERE`
-* Ordenación con `ORDER BY`
-
-### Funciones agregadas
-
-* Conteo de registros
-* Cálculo de medias
-* Sumas y estadísticas
-
-### Agrupaciones
-
-Uso de:
-
-```
-GROUP BY
-HAVING
-```
-
-para analizar información agrupada.
-
-### Relaciones entre tablas
-
-Uso de:
-
-```
-INNER JOIN
-LEFT JOIN
-CROSS JOIN
-```
-
-para combinar información entre múltiples tablas.
-
-### Subconsultas
-
-Consultas dentro de otras consultas para obtener resultados más complejos.
-
-### Creación de vistas
-
-Ejemplo de creación de una vista para reutilizar resultados:
-
-```sql
-CREATE VIEW actor_num_peliculas AS
-SELECT a.first_name, a.last_name, COUNT(fa.film_id) AS numero_peliculas
-FROM actor a
-LEFT JOIN film_actor fa ON a.actor_id = fa.actor_id
-GROUP BY a.first_name, a.last_name;
-```
-
-### Tablas temporales
-
-Se crean tablas temporales para almacenar resultados intermedios durante la ejecución.
+* películas
+* actores
+* clientes
+* alquileres
+* pagos
+* categorías de películas
 
 ---
 
-## Objetivo del proyecto
+## Objetivo del ejercicio
 
-El objetivo principal es **practicar la lógica de consultas SQL en bases de datos relacionales**, aplicando distintos tipos de operaciones y optimizando consultas para obtener información relevante de la base de datos.
-
-Este proyecto permite reforzar habilidades fundamentales en:
-
-* análisis de datos con SQL
-* manipulación de bases de datos relacionales
-* estructuración de consultas complejas
+El objetivo principal del proyecto es **poner en práctica el uso de SQL para consultar y analizar datos**, trabajando con diferentes tipos de consultas y relaciones entre tablas.
 
 ---
 
 ## Autor
 
-Proyecto realizado por **Andrea García** como parte de un ejercicio de práctica de SQL.
+Proyecto realizado por **Andrea García** como parte de un ejercicio práctico de SQL.
